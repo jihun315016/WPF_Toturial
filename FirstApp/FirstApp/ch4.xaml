@@ -1,0 +1,49 @@
+﻿<Window x:Class="FirstApp.ch4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstApp"
+        mc:Ignorable="d"
+        Title="ch4" Height="450" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- StackPanel은 버튼이 추가될 때마다 창 크기랑 상관없이 계속 추가된다. -->
+        <StackPanel Orientation="Horizontal">
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+        </StackPanel>
+
+        <!-- 창 크기에 맞춰서 버튼이 추가된다. -->
+        <!-- 실행 후 창 크기를 조절해보면 StackPanal은 버튼들이 자기 위치를 고정한다. -->
+        <!-- WrapPanel은 창 크기에 맞춰서 버튼이 움직인다. -->
+        <WrapPanel Orientation="Horizontal" Grid.Row="1" Margin="5">
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+        </WrapPanel>
+    </Grid>
+</Window>

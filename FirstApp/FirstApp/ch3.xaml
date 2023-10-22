@@ -1,0 +1,34 @@
+﻿<Window x:Class="FirstApp.ch3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstApp"
+        mc:Ignorable="d"
+        Title="ch3" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition/> 개수 == 행의 개수 -->
+            <ColumnDefinition Width="Auto"/> <!--여백 없이 컨트롤러의 크기에 맞춤-->
+            <ColumnDefinition Width="1*" /> <!--먼저 지정된 크기(Auto)를 제외하고 1/5 크기-->
+            <ColumnDefinition Width="2*" /> <!--먼저 지정된 크기(Auto)를 제외하고 2/5 크기-->
+            <ColumnDefinition Width="2*" /> <!--먼저 지정된 크기(Auto)를 제외하고 2/5 크기-->
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/> <!--<RowDefinition/>의 개수 == 열의 개수-->
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Button Width="100" Grid.Row="0" Grid.Column="0" Content="버튼1"/>
+        <Button Grid.Row="0" Grid.Column="1" Content="버튼2"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="버튼3"/>
+        <Button Grid.Row="0" Grid.Column="3" Content="버튼4"/>
+
+        <Button Width="100" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Content="버튼1-1"/> <!--RowSpan="2" 2칸의 행을 먹는다.-->
+        <Button Grid.Row="1" Grid.Column="1" Content="버튼2-1"/> 
+        <Button Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Content="버튼3-1"/> <!--ColumnSpan="2" 2칸의 열을 먹는다.-->
+        <!--<Button Grid.Row="1" Grid.Column="3" Content="버튼4-1"/>-->
+    </Grid>
+</Window>
