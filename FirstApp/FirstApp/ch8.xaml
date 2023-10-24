@@ -1,0 +1,18 @@
+﻿<Window x:Class="FirstApp.ch8"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstApp"
+        mc:Ignorable="d"
+        Title="ch8" Height="450" Width="800">
+    <StackPanel>
+        <TextBox></TextBox>
+        <TextBox Width="300" TextWrapping="NoWrap"></TextBox> <!-- NoWrap : 넓이를 넘어가도 계속 옆으로 이어써짐 -->
+        <TextBox Width="300" TextWrapping="Wrap"></TextBox> <!-- Wrap : 넓이를 넘어가면 자동 줄바꿈 됌 -->
+        <TextBox Name="txt" KeyDown="txt_KeyDown"  Width="300" TextWrapping="WrapWithOverflow"></TextBox><!-- WrapWithOverflow : 넓이를 넘어가면 스페이스를 눌러야 줄바꿈 -->
+
+        <PasswordBox></PasswordBox>
+        <PasswordBox PasswordChar="*" MaxLength="5"></PasswordBox>
+    </StackPanel>
+</Window>
