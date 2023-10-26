@@ -59,6 +59,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ch11.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ch12.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ch2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +109,12 @@
     </Compile>
     <Compile Include="ch10.xaml.cs">
       <DependentUpon>ch10.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ch11.xaml.cs">
+      <DependentUpon>ch11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ch12.xaml.cs">
+      <DependentUpon>ch12.xaml</DependentUpon>
     </Compile>
     <Compile Include="ch2.xaml.cs">
       <DependentUpon>ch2.xaml</DependentUpon>

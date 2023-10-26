@@ -1,0 +1,23 @@
+﻿<Window x:Class="SampleSource.exRadioButton"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleSource"
+        mc:Ignorable="d"
+        Title="exRadioButton" Height="450" Width="800">
+    
+    <StackPanel Margin="5">
+        <RadioButton GroupName="Alphabet">A</RadioButton>
+        <RadioButton GroupName="Alphabet">B</RadioButton>
+
+        <RadioButton GroupName="Number">
+            <!-- WrapPanel을 통해 내부에 여러 컨트롤 조합 가능 -->
+            <WrapPanel>
+                <Image Width="15" Source="https://cdn1.iconfinder.com/data/icons/photography-with-you-mixsolid/75/Icon_Photography_SolidxMix_Page_12-512.png"/>
+                <TextBlock>1</TextBlock>
+            </WrapPanel>
+        </RadioButton>
+        <RadioButton GroupName="Number">2</RadioButton>
+    </StackPanel>
+</Window>

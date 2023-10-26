@@ -1,0 +1,22 @@
+﻿<Window x:Class="SampleSource.exCheckBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleSource"
+        mc:Ignorable="d"
+        Title="exCheckBox" Height="450" Width="800">
+    <StackPanel x:Name="stackPanel">
+        <CheckBox x:Name="chkAll" Checked="chkAll_Checked" Unchecked="chkAll_Unchecked">All</CheckBox>
+
+        <!-- IsThreeState : 세번째 상태(불확정 상태)를 가진다. -->
+        <CheckBox x:Name="chkA" IsThreeState="True">A</CheckBox>
+        
+        <CheckBox x:Name="chkB">
+            <WrapPanel>
+                <Image Width="15" Source="https://cdn1.iconfinder.com/data/icons/photography-with-you-mixsolid/75/Icon_Photography_SolidxMix_Page_12-512.png"/>
+                <TextBlock>B</TextBlock>
+            </WrapPanel>
+        </CheckBox>
+    </StackPanel>
+</Window>

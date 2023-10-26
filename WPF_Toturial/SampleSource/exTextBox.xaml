@@ -1,0 +1,27 @@
+﻿<Window x:Class="SampleSource.exTextBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleSource"
+        mc:Ignorable="d"
+        Title="exTextBox" Height="450" Width="800">
+    <StackPanel>
+        <!-- NoWrap -->
+        <!-- 텍스트가 Width 값을 넘어가도 옆으로 이어 작성된다. -->
+        <TextBox x:Name="txt1" Width="100" TextWrapping="NoWrap" KeyDown="txt1_KeyDown"/>
+
+        <!-- Wrap -->
+        <!-- 텍스트가 Width 값을 넘어가면 자동 줄바꿈 -->
+        <!-- 출력에 줄바꿈은 반영되지 않는다. -->
+        <TextBox x:Name="txt2" Width="100" TextWrapping="Wrap" KeyDown="txt2_KeyDown"/>
+
+        <!-- WrapWithOverflow -->
+        <!-- 텍스트가 Width 값을 넘어가면 스페이스를 눌러야 줄바꿈 -->
+        <!-- 출력에 줄바꿈은 반영되지 않는다. -->
+        <TextBox x:Name="txt3" Width="100" TextWrapping="WrapWithOverflow" KeyDown="txt3_KeyDown"/>
+
+        <!-- 비밀번호 입력 상자 -->
+        <PasswordBox Width="100"  PasswordChar="*" MaxLength="5"/>
+    </StackPanel>
+</Window>
