@@ -1,0 +1,42 @@
+﻿<Window x:Class="SampleSource.exGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SampleSource"
+        mc:Ignorable="d"
+        Title="exGrid" Height="450" Width="800">
+
+    <!-- 
+    1. <Grid>
+    개발자가 지정한 행과 열에 배치 
+    -->
+    <Grid>
+        <!-- 행의 수 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <!--
+            [Width]
+            Auto : 여백 없이 컨트롤의 크기에 맞춤
+            1* : 먼저 지정된 크기(Auto)를 제오하고 1/3만큼 할당
+            2* : 먼저 지정된 크기(Auto)를 제오하고 2/3만큼 할당
+            -->
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--
+        Grid.RowSpan, Grid.ColumnSpan 
+        셀 합치기
+        -->
+        <Button Content="btn1" Grid.Row="0" Grid.Column="0" Width="100" Background="AliceBlue"/>
+        <Button Content="btn2" Grid.Row="0" Grid.Column="1" Background="SkyBlue"/>
+        <Button Content="btn4" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="LightYellow"/>
+        <Button Content="btn3" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" Background="LightGray"/>
+    </Grid>
+</Window>
