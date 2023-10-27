@@ -1,0 +1,24 @@
+﻿<Window x:Class="FirstApp.ch13"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FirstApp"
+        mc:Ignorable="d"
+        Title="ch13" Height="450" Width="800">
+    <Grid>
+        <!-- 선택한 파일 경로 표시 -->
+        <TextBox x:Name="txtPath" HorizontalAlignment="Left" Margin="63,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="439"/>
+        <Button x:Name="btnFile" Click="btnFile_Click" Content="파일 선택" HorizontalAlignment="Left" Margin="64,72,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnRead" Click="btnRead_Click" Content="파일 읽기" HorizontalAlignment="Left" Margin="125,72,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnDelete" Click="btnDelete_Click" Content="삭제" HorizontalAlignment="Left" Margin="186,72,0,0" VerticalAlignment="Top"/>
+        <RichTextBox x:Name="richTxt" Margin="219,72,298,217">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>
