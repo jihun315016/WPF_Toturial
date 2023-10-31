@@ -5,7 +5,9 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirstWPF", "FirstWPF\FirstWPF.csproj", "{AEF9F77B-AB54-4B5C-A3EF-A91F66486D95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSource", "SampleSource\SampleSource.csproj", "{696008F3-CFC4-4E97-831E-C7F4C3E533AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSource", "SampleSource\SampleSource.csproj", "{696008F3-CFC4-4E97-831E-C7F4C3E533AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.DesignPattern", "WPF.DesignPattern\WPF.DesignPattern.csproj", "{FF3A31BC-0DB3-4AFD-892F-7D1B20B620C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{696008F3-CFC4-4E97-831E-C7F4C3E533AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{696008F3-CFC4-4E97-831E-C7F4C3E533AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{696008F3-CFC4-4E97-831E-C7F4C3E533AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF3A31BC-0DB3-4AFD-892F-7D1B20B620C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3A31BC-0DB3-4AFD-892F-7D1B20B620C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3A31BC-0DB3-4AFD-892F-7D1B20B620C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3A31BC-0DB3-4AFD-892F-7D1B20B620C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
