@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using WPF.DesignPattern.Models;
+using WPF.DesignPattern.MVVM.Commands;
 
 namespace WPF.DesignPattern.MVVM.ViewModels
 {
@@ -30,6 +31,20 @@ namespace WPF.DesignPattern.MVVM.ViewModels
             _personRepository = personRepository;
 
             SaveCommand = new Commands.SaveCommand(this, personRepository);
+
+            DeleteCommand = new RelayCommand<object>(Delete);
+        }
+
+        // object 파라미터는 사용하지 않기 때문에 _로 지정
+        private void Delete(object _)
+        {
+            int.TryParse(Id, out int id);
+            if (_personRepository.DeleteOne(id))
+            {
+                // 데이터 Clear
+                // 데이터 Display
+                // 4:20~
+            }
         }
     }
 }
