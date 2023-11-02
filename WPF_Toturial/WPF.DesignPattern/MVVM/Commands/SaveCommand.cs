@@ -28,7 +28,7 @@ namespace WPF.DesignPattern.MVVM.Commands
             var person = new Person()
             {
                 Name = _mainViewModel.Name,
-                Sex = _mainViewModel.Sex
+                Gender = _mainViewModel.Gender
             };
 
             int.TryParse(_mainViewModel.Id, out int id);
@@ -51,7 +51,7 @@ namespace WPF.DesignPattern.MVVM.Commands
                 return false;
             }
 
-            if (string.IsNullOrEmpty(person.Sex))
+            if (string.IsNullOrEmpty(person.Gender))
             {
                 return false;
             }

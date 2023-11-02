@@ -51,6 +51,8 @@
         <TextBox x:Name="txtSex" Text="{Binding Sex}" Grid.Row="2" Grid.Column="1"/>
         <TextBox x:Name="txtAge" Text="{Binding Age}" Grid.Row="3" Grid.Column="1"/>
 
+        <!--이벤트를 바인딩하여 호출-->
+        <!--Command라는 속성을 이용한다.-->
         <Button x:Name="btnSave"
                 Command="{Binding SaveCommand}"
                 CommandParameter="TestData"

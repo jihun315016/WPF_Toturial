@@ -9,8 +9,6 @@ namespace WPF.DesignPattern.MVVM.Commands
 {
     public class RelayCommand<T> : ICommand
     {
-
-        // 2:30~
         private readonly Action<T>? _excute;
         private readonly Predicate<T> _canExcute;
 
@@ -28,12 +26,12 @@ namespace WPF.DesignPattern.MVVM.Commands
 
         public bool CanExecute(object? parameter)
         {
-            throw new NotImplementedException();
+            return _canExcute?.Invoke((T)parameter!) ?? true;
         }
 
         public void Execute(object? parameter)
         {
-            throw new NotImplementedException();
+            _excute.Invoke((T)parameter);
         }
     }
 }
