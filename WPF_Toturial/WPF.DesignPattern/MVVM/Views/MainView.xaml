@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF.DesignPattern.MVVM.Views"
+        xmlns:local="clr-namespace:WPF.DesignPattern.MVVM.Views" xmlns:visualbasic="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic" xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
 
@@ -46,10 +46,13 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Text="성별 : "/>
         <TextBlock Grid.Row="3" Grid.Column="0" Text="나이 : "/>
 
-        <TextBox x:Name="txtId" Text="{Binding Id}" Grid.Row="0" Grid.Column="1"/>
-        <TextBox x:Name="txtName" Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="txtSex" Text="{Binding Gender}" Grid.Row="2" Grid.Column="1"/>
-        <TextBox x:Name="txtAge" Text="{Binding Age}" Grid.Row="3" Grid.Column="1"/>
+        <!-- UpdateSourceTrigger=Explicit -->
+        <!-- 기본 값으로두면(이거 안 쓰면) 포커스가 떠날 때, CanExecute 검사를 하게 된다. -->
+        <!-- PropertyChanged는 한글 입력이 잘 안되는 문제 발생 -->
+        <TextBox x:Name="txtId" Text="{Binding Id, UpdateSourceTrigger=Explicit}" Grid.Row="0" Grid.Column="1"/>
+        <TextBox x:Name="txtName" Text="{Binding Name, UpdateSourceTrigger=Explicit}" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="txtGender" Text="{Binding Gender, UpdateSourceTrigger=Explicit}" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="txtAge" Text="{Binding Age, UpdateSourceTrigger=Explicit}" Grid.Row="3" Grid.Column="1"/>
 
         <!--이벤트를 바인딩하여 호출-->
         <!--Command라는 속성을 이용한다.-->
@@ -64,9 +67,19 @@
                 Command="{Binding CancelCommand}"
                 Grid.Row="2" Grid.Column="2" Content="취소"/>
 
+        <!-- MouseLeftButtonUp="lstView_MouseLeftButtonUp" -->
+        <!-- 이거 만들고 비하인드 코드를 작성해서 할 수도 있지만 Microsoft.Xaml.Behaviors.Wpf 누겟 패키지를 설치해서 그렇게 안 하고도 할 수 있음 -->
         <ListView x:Name="lstView"
                   ItemsSource="{Binding People}"
                   Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20">
+            <!-- <Interaction 입력 후 Alt + Enter -> xmlns http://schemas.microsoft.com/xaml/behaviors 추가 -->
+            <b:Interaction.Triggers>
+                <b:EventTrigger EventName="MouseLeftButtonUp">
+                    <b:InvokeCommandAction
+                        Command="{Binding MouseLeftButtonUpCommand}"
+                        CommandParameter="{Binding ElementName=lstView, Path=SelectedItem}"/>
+                </b:EventTrigger>
+            </b:Interaction.Triggers>
             <ListView.View>
                 <GridView>
                     <GridView.Columns>

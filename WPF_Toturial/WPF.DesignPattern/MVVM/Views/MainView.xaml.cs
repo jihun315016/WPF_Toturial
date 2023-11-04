@@ -22,6 +22,18 @@ namespace WPF.DesignPattern.MVVM.Views
         public MainView()
         {
             InitializeComponent();
+
+            txtId.TextChanged += Txt_TextChanged;
+            txtName.TextChanged += Txt_TextChanged;
+            txtGender.TextChanged += Txt_TextChanged;
+            txtAge.TextChanged += Txt_TextChanged;
+        }
+
+        private void Txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // 텍스트가 변경이 될 때, 바인딩된 값이 업데이트가 된다.
+            BindingExpression be = ((TextBox)sender).GetBindingExpression(TextBox.TextProperty);
+            be.UpdateSource();
         }
 
         private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -40,6 +52,11 @@ namespace WPF.DesignPattern.MVVM.Views
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void lstView_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
 
         }

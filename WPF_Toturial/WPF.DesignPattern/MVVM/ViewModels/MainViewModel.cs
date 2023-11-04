@@ -1,5 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Net.PeerToPeer.Collaboration;
 using System.Windows.Input;
 using WPF.DesignPattern.Models;
 using WPF.DesignPattern.MVVM.Commands;
@@ -14,6 +16,7 @@ public class MainViewModel : ViewModelBase
     public ICommand SaveCommand { get; set; }
     public ICommand DeleteCommand { get; set; }
     public ICommand CanCelCommand { get; set; }
+    public ICommand MouseLeftButtonUpCommand { get; set; }
 
 
     private string _id = "";
@@ -79,9 +82,27 @@ public class MainViewModel : ViewModelBase
 
         SaveCommand = new Commands.SaveCommand(this, personRepository);
 
-        DeleteCommand = new RelayCommand<object>(Delete);
+        DeleteCommand = new RelayCommand<object>(Delete, CanDelete);
+
+        CanCelCommand = new RelayCommand<object>(_ => Clear());
+
+        MouseLeftButtonUpCommand = new RelayCommand<Person>(MouseLeftButtonUp);
 
         DisplayListView();
+    }
+
+    private void MouseLeftButtonUp(Person person)
+    {
+        Id = person.Id.ToString();
+        Name = person.Name;
+        Gender = person.Gender;
+        Age = person.Age.ToString();
+    }
+
+    private bool CanDelete(object _)
+    {
+        int.TryParse(Id, out int id);
+        return id > 0;
     }
 
     // object 파라미터는 사용하지 않기 때문에 _로 지정
