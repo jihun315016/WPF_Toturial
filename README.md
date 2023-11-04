@@ -20,3 +20,6 @@ Grid, Panel을 활용한 레이아웃과 관련된 샘플 스소 - [Layout](./WP
 
 ### Bind
 데이터 바인딩과 관련된 샘플 소스 - [Bind](./WPF_Toturial//SampleSource/Bind)  
+
+## WPF.DesignPattern
+WPF를 통해 학습한 몇 가지 디자인 패턴
