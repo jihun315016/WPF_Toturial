@@ -46,12 +46,12 @@ namespace WPF.DesignPattern.MVVM.Commands
                 return false;
             }
 
-            if (string.IsNullOrEmpty(person.Name))
+            if (string.IsNullOrWhiteSpace(person.Name))
             {
                 return false;
             }
 
-            if (string.IsNullOrEmpty(person.Gender))
+            if (string.IsNullOrWhiteSpace(person.Gender))
             {
                 return false;
             }
@@ -67,7 +67,11 @@ namespace WPF.DesignPattern.MVVM.Commands
         private void Save()
         {
             var person = GetPerson();
-            _personRepository.SaveOne(person);
+            if (_personRepository.SaveOne(person))
+            {
+                _mainViewModel.Clear();
+                _mainViewModel.DisplayListView();
+            }
         }
 
         // Execute 실행 가능 여부

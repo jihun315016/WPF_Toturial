@@ -43,12 +43,12 @@
 
         <TextBlock Grid.Row="0" Grid.Column="0" Text="ID : "/>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="이름 : "/>
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="성 : "/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="성별 : "/>
         <TextBlock Grid.Row="3" Grid.Column="0" Text="나이 : "/>
 
         <TextBox x:Name="txtId" Text="{Binding Id}" Grid.Row="0" Grid.Column="1"/>
         <TextBox x:Name="txtName" Text="{Binding Name}" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="txtSex" Text="{Binding Sex}" Grid.Row="2" Grid.Column="1"/>
+        <TextBox x:Name="txtSex" Text="{Binding Gender}" Grid.Row="2" Grid.Column="1"/>
         <TextBox x:Name="txtAge" Text="{Binding Age}" Grid.Row="3" Grid.Column="1"/>
 
         <!--이벤트를 바인딩하여 호출-->
@@ -64,8 +64,9 @@
                 Command="{Binding CancelCommand}"
                 Grid.Row="2" Grid.Column="2" Content="취소"/>
 
-        <ListView x:Name="lstView"                                 
-              Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20">
+        <ListView x:Name="lstView"
+                  ItemsSource="{Binding People}"
+                  Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" FontSize="20">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -78,9 +79,9 @@
               Width="100"
               DisplayMemberBinding="{Binding Name}"/>
                         <GridViewColumn 
-              Header="성" 
+              Header="성별" 
               Width="100"
-              DisplayMemberBinding="{Binding Sex}"/>
+              DisplayMemberBinding="{Binding Gender}"/>
                         <GridViewColumn 
               Header="나이" 
               Width="100"
