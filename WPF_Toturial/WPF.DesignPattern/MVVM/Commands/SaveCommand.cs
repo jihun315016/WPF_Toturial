@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using WPF.DesignPattern.Models;
+using WPF.DesignPattern.MVVM.Models;
 using WPF.DesignPattern.MVVM.ViewModels;
 using WPF.DesignPattern.MVVM.Views;
 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WPF.DesignPattern.Models;
+namespace WPF.DesignPattern.MVVM.Models;
 
 public interface IPersonRepository
 {
@@ -9,3 +9,4 @@ public interface IPersonRepository
     bool DeleteOne(int id);
     bool Exist(int id);
 }
+

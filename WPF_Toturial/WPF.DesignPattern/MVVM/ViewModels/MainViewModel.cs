@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Net.PeerToPeer.Collaboration;
 using System.Windows.Input;
-using WPF.DesignPattern.Models;
+using WPF.DesignPattern.MVVM.Models;
 using WPF.DesignPattern.MVVM.Commands;
 
 namespace WPF.DesignPattern.MVVM.ViewModels;

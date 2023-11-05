@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPF.DesignPattern.Models;
+using WPF.DesignPattern.MVVM.Models;
 
 namespace WPF.DesignPattern
 {
@@ -24,26 +24,6 @@ namespace WPF.DesignPattern
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void btnMVC_Click(object sender, RoutedEventArgs e)
-        {
-            var mainView = new MVC.Views.MainView();
-            mainView.Show();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var personRepository = new PersonRepository();
-
-            var mainView = new MVVM.Views.MainView()
-            {
-                // 데이터 바인딩을 위한 작업
-                // View(xaml)에서 MainViewModel의 속성들을 바인딩할 수 있게 된다.
-                // DataContext -> UI에 바인딩 될 데이터 소스(데이터가 오는 곳)
-                DataContext = new MVVM.ViewModels.MainViewModel(personRepository) 
-            };
-            mainView.Show();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace WPF.DesignPattern.Models;
+﻿namespace WPF.DesignPattern.MVVM.Models;
 
 public class Person
 {

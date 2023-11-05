@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WPF.DesignPattern.Properties;
 
-namespace WPF.DesignPattern.Models;
+namespace WPF.DesignPattern.MVVM.Models;
 
 public class PersonRepository : IPersonRepository
 {
