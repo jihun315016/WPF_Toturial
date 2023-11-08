@@ -6,7 +6,71 @@
         xmlns:local="clr-namespace:SampleSource.Bind"
         mc:Ignorable="d"
         Title="exBinding2" Height="450" Width="800">
+
+    <Window.DataContext>
+        <local:FruitViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+    </Window.Resources>
+    
     <Grid>
-        <Button x:Name="btnStart" Content="MVVM 바인딩 시작" FontSize="30" Click="btnStart_Click"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="이름" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="가격" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="유기농" HorizontalAlignment="Center"/>
+
+        <TextBox x:Name="txtName" Grid.Row="0" Grid.Column="1" Text="{Binding Name}"/>
+        <TextBox x:Name="txtPrice" Grid.Row="1" Grid.Column="1" Text="{Binding Price}"/>
+        <TextBox x:Name="txtIsOranic" Grid.Row="2" Grid.Column="1" Text="{Binding IsOranic}"/>
+
+        <Button x:Name="btnSave" Grid.Row="0" Grid.Column="2" Content="저장" Command="{Binding SaveCommand}"/>
+
+        <ListView Grid.Row="3" Grid.Column="1" x:Name="lstView" ItemsSource="{Binding FruitList}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        
+                        <GridViewColumn Header="Name" Width="150" DisplayMemberBinding="{Binding Name}"/>
+                        
+                        <GridViewColumn Header="Price" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <!-- ListViewItem 속성 지정해야 정렬이 먹힌다. --> 
+                                    <TextBlock Text="{Binding Price}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        
+                        <GridViewColumn Header="IsOranic" Width="150">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                     <!--만약 IsEnable True로 하려면 TwoWay 바인딩으로 설정해야 PropertyChanged 이벤트가 발생된다.-->
+                                    <CheckBox IsChecked="{Binding IsOranic}" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
+    
 </Window>

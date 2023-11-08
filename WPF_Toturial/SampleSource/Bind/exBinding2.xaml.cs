@@ -20,23 +20,9 @@ namespace SampleSource.Bind
     /// </summary>
     public partial class exBinding2 : Window
     {
-        
-
         public exBinding2()
         {
-            InitializeComponent();            
-        }
-
-        private void btnStart_Click(object sender, RoutedEventArgs e)
-        {
-            FruitRepository fruitRepository = new FruitRepository();
-
-            var fruitView = new fruitViiew()
-            {
-                DataContext = new FruitViewModel(fruitRepository)
-            };
-
-            fruitView.Show();
-        }
+            InitializeComponent();
+        }        
     }
 }
