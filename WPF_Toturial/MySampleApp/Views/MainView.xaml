@@ -6,7 +6,38 @@
         xmlns:local="clr-namespace:MySampleApp.Views"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800">
+
+    <Window.Resources>
+        <ResourceDictionary Source="..\Styles\Style.xaml" />
+    </Window.Resources>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="이름 "/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="가격 "/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="디카페인 가능 "/>
+
+        <TextBox x:Name="txtName" Grid.Row="0" Grid.Column="1" Style="{StaticResource InputControl}"/>
+        <TextBox x:Name="txPrice" Grid.Row="1" Grid.Column="1" Style="{StaticResource InputControl}"/>
+        <ComboBox x:Name="cboDecafOption" Grid.Row="2" Grid.Column="1" Style="{StaticResource InputControl}"/>
+
+        <WrapPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button x:Name="btnSave" Content="저장"/>
+            <Button x:Name="btnDelete" Content="삭제"/>
+        </WrapPanel>
+
         
     </Grid>
 </Window>

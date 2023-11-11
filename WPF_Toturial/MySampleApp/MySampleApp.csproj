@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mdoels\" />
     <Folder Include="Commands\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
