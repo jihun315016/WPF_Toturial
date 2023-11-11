@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace SampleSource.Bind
 {
@@ -15,6 +16,8 @@ namespace SampleSource.Bind
         private ObservableCollection<Fruit> _fruitList;
 
         public event PropertyChangedEventHandler? PropertyChanged;
+
+        public ICommand SaveCommand { get; set; }
 
         public ObservableCollection<Fruit> FruitList
         {
@@ -30,9 +33,9 @@ namespace SampleSource.Bind
         {
             FruitList = new ObservableCollection<Fruit>()
             {
-            new Fruit() {Name = "사과", Price = 2000, IsOranic = true},
-            new Fruit() {Name = "딸기", Price = 5000, IsOranic = true},
-            new Fruit() {Name = "블루베리", Price = 3000, IsOranic = false}
+                new Fruit() {Name = "사과", Price = 2000, IsOranic = true},
+                new Fruit() {Name = "딸기", Price = 5000, IsOranic = true},
+                new Fruit() {Name = "블루베리", Price = 3000, IsOranic = false}
             };
         }
 
