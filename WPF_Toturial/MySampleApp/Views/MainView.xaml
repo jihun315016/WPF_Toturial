@@ -34,8 +34,9 @@
         <ComboBox x:Name="cboDecafOption" Grid.Row="2" Grid.Column="1" Style="{StaticResource InputControl}"/>
 
         <WrapPanel Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-            <Button x:Name="btnSave" Content="저장"/>
-            <Button x:Name="btnDelete" Content="삭제"/>
+            <!-- CommandParameter="TestData" 와 같은 속성을 통해 파라미터를 넘길 수도 있다. -->
+            <Button x:Name="btnSave" Content="저장" Command="{Binding SaveCommand}"/>
+            <Button x:Name="btnDelete" Content="삭제" Command="{Binding DeleteCommand}"/>
         </WrapPanel>
 
         
