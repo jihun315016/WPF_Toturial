@@ -1,4 +1,5 @@
-﻿using MySampleApp.Mdoels;
+﻿using MySampleApp.Commands;
+using MySampleApp.Mdoels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -26,7 +27,16 @@ namespace MySampleApp.ViewModels
         {
             _coffeeDAO = coffeeDAO;
 
-            
+            SaveCommand = new SaveCommand(_coffeeDAO);
+
+            DeleteCommand = new DeleteCommand(_coffeeDAO);
+
+            DisPlayListView();
+        }
+
+        private void DisPlayListView()
+        {
+            // throw new NotImplementedException();
         }
     }
 }
