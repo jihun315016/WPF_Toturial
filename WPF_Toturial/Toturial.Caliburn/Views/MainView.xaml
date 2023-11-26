@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="Toturial.Caliburn.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Toturial.Caliburn.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <!-- Caliburn을 사용하여 Text="{Binding Title}" 이렇게 안 하고 -->
+        <!-- 컨트롤 이름에 따라 자동으로 바인딩 처리가 된다. -->        
+        <TextBlock x:Name="Title"/>
+        
+        <!-- 일반적인 MVVM 패턴의 바인딩 -->
+        <TextBlock Text="{Binding Title}"/>
+    </Grid>
+</UserControl>

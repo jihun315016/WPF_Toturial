@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,16 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SampleSource.Bind
+namespace Toturial.Caliburn.Views
 {
     /// <summary>
-    /// exBinding2.xaml에 대한 상호 작용 논리
+    /// ShellView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class exBinding2 : Window
+    public partial class ShellView : Window
     {
-        public exBinding2()
+        public ShellView()
         {
             InitializeComponent();
-        }        
+        }
     }
 }

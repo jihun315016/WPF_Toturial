@@ -17,9 +17,9 @@ namespace SampleSource.Bind
     /// <summary>
     /// exBinding1.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class exBinding1 : Window
+    public partial class exBinding : Window
     {
-        public exBinding1()
+        public exBinding()
         {
             InitializeComponent();
 
