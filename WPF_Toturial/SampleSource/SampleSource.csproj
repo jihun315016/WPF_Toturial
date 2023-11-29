@@ -8,6 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\coffee.png" />
+    <None Remove="Assets\tea.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -16,12 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Assets\coffee.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Update="Assets\tea.png">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -29,7 +28,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Resource Include="Assets\coffee.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\tea.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

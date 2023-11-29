@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,16 +30,9 @@ namespace SampleSource.Bind
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
             Console.WriteLine(System.Environment.CurrentDirectory);
-            string imagePath = "pack://application:,,,/Assets/tes.png";
-            if (System.IO.File.Exists(imagePath))
-            {
-                MessageBox.Show("!!");
-            }
-            else
-            {
-                MessageBox.Show("??");
-            }
+            
             beverageList = new List<Beverage>()
             {
                 new Coffee() {Name = "아메리카노", Price = 1500},

@@ -10,7 +10,7 @@ namespace SampleSource.Bind
     {
         public string Name { get; set; }
         public int Price { get; set; }
-        public string Img { get; set; }
+        public string ImagePath { get; set; }
         public BeverageCategory Category { get; set; }
     }
 
@@ -22,8 +22,8 @@ namespace SampleSource.Bind
         public Coffee() 
         { 
             Category = BeverageCategory.Coffee;
-            Img = @"/Assets/coffee.png";
-            Img = @"C:\Users\jihun\coding\WPF_Toturial\WPF_Toturial\SampleSource\Assets\coffee.png";
+            ImagePath = @"/Bind/coffee.png";
+            //ImagePath = @"C:\Users\jihun\coding\WPF_Toturial\WPF_Toturial\SampleSource\Assets\coffee.png";
         }
     }
     
@@ -35,7 +35,7 @@ namespace SampleSource.Bind
         public Tea()
         {
             Category = BeverageCategory.Tea;
-            Img = @"/Assets/tea.png";
+            ImagePath = @"/Bind/tea.png";
         }
     }
 
