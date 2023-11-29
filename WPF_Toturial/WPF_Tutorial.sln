@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleSource", "SampleSourc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Torurial.MVVM", "Torurial.MVVM\Torurial.MVVM.csproj", "{0AAA552C-F2BA-4B62-A730-9A8EAE66F08D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toturial.Caliburn", "Toturial.Caliburn\Toturial.Caliburn.csproj", "{70EE49C6-F46E-4FAD-BD06-09C168387380}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{0AAA552C-F2BA-4B62-A730-9A8EAE66F08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAA552C-F2BA-4B62-A730-9A8EAE66F08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AAA552C-F2BA-4B62-A730-9A8EAE66F08D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70EE49C6-F46E-4FAD-BD06-09C168387380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70EE49C6-F46E-4FAD-BD06-09C168387380}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70EE49C6-F46E-4FAD-BD06-09C168387380}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70EE49C6-F46E-4FAD-BD06-09C168387380}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
