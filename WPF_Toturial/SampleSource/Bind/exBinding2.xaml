@@ -5,13 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SampleSource.Bind"
         mc:Ignorable="d"
-        Title="exBinding2" Height="450" Width="800">
+        Title="exBinding2" Height="450" Width="800"
+        Loaded="Window_Loaded">
     <Grid>
 
-        <ListBox x:Name="lst">
+        <ListBox x:Name="lst" >
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Width="250" Height="300">
+                    <StackPanel>
                         <Image Source="{Binding Img}"/>
                         <TextBlock Text="{Binding Name}"/>
                         <TextBlock Text="{Binding Price}"/>
