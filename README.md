@@ -17,5 +17,3 @@ Grid, Panel을 활용한 레이아웃과 관련된 샘플 스소 - [Layout](./WP
 <br/>
 <br/>
 
-## Toturial.Caliburn
-Caliburn 학습
